@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+      <% if @squared!=0 %>
+    <h1>Square Results</h1>
+    Number
+    <%= @square_new_number %>
+    <br>
+    <br>
+    Square
+    <%= @squared %>
+    <br>
+    <br>
+        <a href="/square/new">Calculate another square</a>
+      <% else %>
+     Enter a number
+    <form action="/square/new" method="get">
+       <input type="text" name="square_new_number" id="square_new_number" placeholder="What number do you want to take the square of?">
+       <br>
+      <button>Calculate square</button>
+    </form>
+     <% end %>
+  </html>

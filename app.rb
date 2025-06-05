@@ -6,7 +6,9 @@ get("/") do
 end
 
 get("/square/new") do
-  erb :index
+    @square_new_number = params[:square_new_number].to_i
+    @squared = @square_new_number * @square_new_number
+  erb :square
 end
 
 get("/square_root/new") do
