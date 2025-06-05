@@ -6,8 +6,14 @@ get("/") do
 end
 
 get("/square/new") do
-    @square_new_number = params[:square_new_number].to_i
-    @squared = @square_new_number * @square_new_number
+    @sq_new_number = params[:sq_new_number].to_f
+    @squared = @sq_new_number * @sq_new_number
+  erb :square
+end
+
+get("/square/results") do
+    @sq_new_number = params[:sq_new_number].to_f
+    @squared = @sq_new_number * @sq_new_number
   erb :square
 end
 
