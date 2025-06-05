@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-      <% if @random_value!=0 && !@random_value.nan? %>
+      <% if @random_value!=0 %>
     <h1>Random Results</h1>
     Minimum<br>
-    <%= @minimum_value %>
+    <%= @user_min %>
     <br>
     <br>
     Maximum<br>
-    <%= @maximum_value %>
+    <%= @user_max %>
     <br>
     <br>
     Random Number<br>
@@ -16,12 +16,12 @@
     <br>
         <a href="/random/new">Pick another random number</a>
       <% else %>
-      <form action="/payment/results" method="get">
-    <label for="minimum_value">Minimum</label>
-       <input type="text" name="minimum_value" id="minimum_value" placeholder="E.g. 1.5">
+      <form action="/random/results" method="get">
+    <label for="user_min">Minimum</label>
+       <input type="text" name="user_min" id="user_min" placeholder="E.g. 1.5">
        <br>
-    <label for="maximum_value">Maximum</label>
-       <input type="text" name="maximum_value" id="maximum_value" placeholder="E.g. 4.5">
+    <label for="user_max">Maximum</label>
+       <input type="text" name="user_max" id="user_max" placeholder="E.g. 4.5">
        <br>
       <button>Pick random number</button>
     </form>

@@ -48,15 +48,15 @@ get("/payment/results") do
 end
 
 get("/random/new") do
-    @minimum_value = params[:minimum_value].to_f
-    @maximum_value = params[:maximum_value].to_f
-    @random_value = rand(@minimum_value..@maximum_value)
+    @user_min = params[:user_min].to_f
+    @user_max = params[:user_max].to_f
+    @random_value = rand(@user_min..@user_max)
   erb :random
 end
 
 get("/random/results") do
-    @minimum_value = params[:minimum_value].to_f
-    @maximum_value = params[:maximum_value].to_f
-    @random_value = rand(@minimum_value..@maximum_value)
+    @user_min = params[:user_min].to_f
+    @user_max = params[:user_max].to_f
+    @random_value = rand(@user_min..@user_max)
   erb :random
 end
