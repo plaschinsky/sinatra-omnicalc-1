@@ -3,7 +3,7 @@
       <% if @payment!=0 && !@payment.nan? %>
     <h1>Square Results</h1>
     APR<br>
-    <%= @APR_value %>
+    <%= format("%.4f%%", @APR_value) %>
     <br>
     <br>
     Number of years<br>
@@ -11,11 +11,11 @@
     <br>
     <br>
     Principal<br>
-    <%= @principal_value %>
+    <%= @principal_value.to_fs(:currency) %>
     <br>
     <br>
     Payment<br>
-    <%= @payment %>
+    <%= @payment.to_fs(:currency) %>
     <br>
     <br>
         <a href="/payment/new">Calculate another payment</a>
