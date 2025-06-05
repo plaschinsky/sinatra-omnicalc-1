@@ -32,7 +32,19 @@ get("/square_root/results") do
 end
 
 get("/payment/new") do
-  erb :index
+    @APR_value = params[:APR_value].to_f/100/12
+    @years_value = params[:years_value].to_i*12
+    @principal_value = params[:principal_value].to_f
+    @payment = (@APR_value*(@principal_value))/(1-(1+@APR_value)**@years_value)
+  erb :payment
+end
+
+get("/payment/results") do
+    @APR_value = params[:APR_value].to_f/100/12
+    @years_value = params[:years_value].to_i*12
+    @principal_value = params[:principal_value].to_f
+    @payment = (@APR_value*(@principal_value))/(1-(1+@APR_value)**@years_value)
+  erb :payment
 end
 
 get("/random/new") do
