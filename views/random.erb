@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+      <% if @random_value!=0 && !@random_value.nan? %>
+    <h1>Random Results</h1>
+    Minimum<br>
+    <%= @minimum_value %>
+    <br>
+    <br>
+    Maximum<br>
+    <%= @maximum_value %>
+    <br>
+    <br>
+    Random Number<br>
+    <%= @random_value %>
+    <br>
+    <br>
+        <a href="/random/new">Pick another random number</a>
+      <% else %>
+      <form action="/payment/results" method="get">
+    <label for="minimum_value">Minimum</label>
+       <input type="text" name="minimum_value" id="minimum_value" placeholder="E.g. 1.5">
+       <br>
+    <label for="maximum_value">Maximum</label>
+       <input type="text" name="maximum_value" id="maximum_value" placeholder="E.g. 4.5">
+       <br>
+      <button>Pick random number</button>
+    </form>
+     <% end %>
+  </html>
